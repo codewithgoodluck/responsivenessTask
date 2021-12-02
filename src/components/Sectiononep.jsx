@@ -10,8 +10,8 @@ const Sectiononep = () => {
       <div>
         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
         <Row>
-          <Hero_Left_Section>
-            <Col xs={12} md={4}>
+          <Col xs={12} md={6}>
+            <Hero_Left_Section>
               <h1
                 style={{
                   textAlign: 'center',
@@ -30,11 +30,16 @@ const Sectiononep = () => {
               </p>
 
               <div></div>
-            </Col>
-          </Hero_Left_Section>
-          {Data.map(video => (
-            <SectiononeCard key={video.key} {...video} />
-          ))}
+            </Hero_Left_Section>
+          </Col>
+
+          <Col xs={12} md={6}>
+            <Hero_Left_Section>
+              {Data.map(video => (
+                <SectiononeCard key={video.key} {...video} />
+              ))}
+            </Hero_Left_Section>
+          </Col>
         </Row>
       </div>
     </Container>
@@ -43,16 +48,30 @@ const Sectiononep = () => {
 
 export default Sectiononep;
 
-const Hero_Right_Section = styled.div`
-  img {
-    width: 100%;
-    padding-left: 5px;
-  }
-`;
+// const Hero_Right_Section = styled.div`
+//   img {
+//     width: 100%;
+//     padding-left: 5px;
+//   }
+// `;
 
 const Hero_Left_Section = styled.div`
   margin-top: '40px';
   color: 'color: hsl(228, 45%, 44%)';
+  @media (min-width :768px) {
+      margin-left:100px;
+      margin-top:110px;
+  }
+
+  h1{
+
+    @media (min-width :768px) {
+      padding-top:110px;
+  }
+
+  }
+
+  
 
   p {
     font-size: 20px;

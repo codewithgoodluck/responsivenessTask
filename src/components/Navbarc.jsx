@@ -12,19 +12,21 @@ import {
   Dropdown,
   FormControl,
 } from 'react-bootstrap';
+import styled from 'styled-components';
 
 const Navbarc = () => {
   return (
+    <NavbarParent>
     <Container fluid>
        <Navbar bg="white" expand="lg">
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="#">
           <img src="Images/logo.svg" alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 "
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
@@ -48,8 +50,37 @@ const Navbarc = () => {
       </Container>
     </Navbar>
     </Container>
+    </NavbarParent>
    
   );
 };
 
 export default Navbarc;
+
+const NavbarParent = styled.div`
+
+/* &:hover .nav-link a{
+  color:red !important;
+} */
+
+
+ 
+
+  .navbar-expand-lg .navbar-nav-scroll{
+    @media (min-width :768px) {
+      margin-left:200px;
+  }
+  }
+
+  .btn-group-lg>.btn, .btn-lg{
+    @media (min-width :768px) {
+      margin-top:5px;
+      border:none;
+      background-color:hsl(228, 45%, 44%) !important;
+
+
+  }
+  }
+
+
+`
